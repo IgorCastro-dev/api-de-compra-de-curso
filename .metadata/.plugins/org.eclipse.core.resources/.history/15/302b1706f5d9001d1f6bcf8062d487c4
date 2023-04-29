@@ -1,0 +1,12 @@
+package com.igor.aplicativo.exception;
+
+import java.time.LocalDateTime;
+
+import org.springframework.http.HttpStatus;
+
+public class ErroDetails {
+	private String message;
+	private LocalDateTime time = LocalDateTime.now();
+	private String path;
+	private HttpStatus erroCode;
+}

@@ -1,0 +1,5 @@
+package com.igor.aplicativo.exception;
+
+public class ErroDetails {
+
+}

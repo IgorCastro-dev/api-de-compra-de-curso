@@ -1,0 +1,25 @@
+package com.igor.aplicativo.service.impl;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.igor.aplicativo.dtos.SubscriptionTypeDto;
+import com.igor.aplicativo.repository.SubscriptionsTypeRepository;
+import com.igor.aplicativo.service.SubscriptionTypeService;
+
+import lombok.AllArgsConstructor;
+
+@Service
+@AllArgsConstructor
+public class SubscriptionTypeServiceImpl implements SubscriptionTypeService{
+	
+	private SubscriptionsTypeRepository subscriptionsTypeRepository;
+
+	@Override
+	public List<SubscriptionTypeDto> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

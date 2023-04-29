@@ -1,0 +1,32 @@
+package com.igor.aplicativo.mapper;
+
+import java.time.LocalDate;
+
+import org.hibernate.validator.constraints.br.CPF;
+
+import com.igor.aplicativo.dtos.UserDto;
+import com.igor.aplicativo.model.User;
+import com.igor.aplicativo.model.UserType;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
+public class UserMapper {
+	
+	public static User userDtoToEntity(UserDto userDto,UserType userType) {
+		User user = User.builder()
+						.id(null)
+						.name(null)
+						.email(null)
+						.phone(null)
+						.cpf(null)
+						.dtSubscription(null)
+						.dtExpiration(null)
+						.userType(null)
+						.subscriptionsType(null)
+						.build();
+	}
+
+}

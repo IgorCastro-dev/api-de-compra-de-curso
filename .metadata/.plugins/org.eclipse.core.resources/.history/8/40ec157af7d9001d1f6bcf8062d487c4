@@ -1,0 +1,42 @@
+package com.igor.aplicativo.service.impl;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.stereotype.Service;
+
+import com.igor.aplicativo.dtos.SubscriptionTypeDto;
+import com.igor.aplicativo.mapper.SubscriptionTypeMapper;
+import com.igor.aplicativo.model.SubscriptionsType;
+import com.igor.aplicativo.repository.SubscriptionsTypeRepository;
+import com.igor.aplicativo.service.SubscriptionTypeService;
+
+import lombok.AllArgsConstructor;
+
+@Service
+@AllArgsConstructor
+public class SubscriptionTypeServiceImpl implements SubscriptionTypeService{
+	
+	private SubscriptionsTypeRepository subscriptionsTypeRepository;
+
+	@Override
+	public List<SubscriptionTypeDto> findAll() {
+		List<SubscriptionTypeDto> subscriptionTypes;
+		subscriptionTypes = subscriptionsTypeRepository.findAll()
+														.stream()
+														.map((subscriptionType) -> SubscriptionTypeMapper.SubscriptionTypeToDto(subscriptionType))
+														.collect(Collectors.toList());
+		return subscriptionTypes;
+	}
+
+	@Override
+	public SubscriptionTypeDto findById(Long id) {
+		try {
+			SubscriptionsType subscriptionType = subscriptionsTypeRepository.findById(id).get();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return null;
+	}
+
+}

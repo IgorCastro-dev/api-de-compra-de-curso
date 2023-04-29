@@ -1,0 +1,9 @@
+package com.igor.aplicativo.service;
+
+import java.util.List;
+
+import com.igor.aplicativo.dtos.SubscriptionTypeDto;
+
+public interface SubscriptionTypeService {
+	List<SubscriptionTypeDto> findAll();
+}
